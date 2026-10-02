@@ -1,0 +1,734 @@
+/* =========================================================
+   DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+    /* Cores principais */
+    --cor-marinho: #0F172A;
+    --cor-azul: #2563EB;
+    --cor-verde: #16A34A;
+    --cor-roxo: #7C3AED;
+
+    /* Cores de apoio */
+    --cor-azul-claro: #DBEAFE;
+    --cor-verde-claro: #DCFCE7;
+    --cor-roxo-claro: #EDE9FE;
+
+     /* Cores de erro */
+    --cor-erro: #DC2626;
+    --cor-erro-claro: #FEE2E2;
+
+    /* Cores neutras */
+    --cor-branca: #FFFFFF;
+    --cor-fundo: #F4F7FB;
+    --cor-borda: #D7DEE8;
+    --cor-texto: #1E293B;
+    --cor-texto-secundario: #64748B;
+
+    /* Fonte */
+    --fonte-principal: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    /* Escala tipográfica */
+    --texto-pequeno: 0.875rem;
+    --texto-normal: 1rem;
+    --texto-medio: 1.25rem;
+    --texto-grande: 1.75rem;
+    --texto-titulo: 2.5rem;
+
+    /* Escala de espaçamentos */
+    --espaco-1: 0.25rem;
+    --espaco-2: 0.5rem;
+    --espaco-3: 1rem;
+    --espaco-4: 1.5rem;
+    --espaco-5: 2rem;
+    --espaco-6: 3rem;
+    --espaco-7: 4rem;
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    font-size: var(--texto-normal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: var(--texto-titulo);
+}
+
+h2 {
+    font-size: var(--texto-grande);
+    color: var(--cor-marinho);
+}
+
+p {
+    font-size: var(--texto-normal);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    background-color: var(--cor-marinho);
+    color: var(--cor-branca);
+    padding: var(--espaco-5);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* =========================================================
+   MENU - FLEXBOX
+   ========================================================= */
+
+nav {
+    background-color: var(--cor-azul);
+    padding: var(--espaco-3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-3);
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--espaco-2) var(--espaco-3);
+    border-radius: 6px;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        transform 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--cor-roxo);
+    color: var(--cor-branca);
+    transform: translateY(-2px);
+}
+
+nav a:focus {
+    outline: 3px solid var(--cor-verde-claro);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   GRID PRINCIPAL - 12 COLUNAS
+   ========================================================= */
+
+main {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: var(--espaco-5) 0;
+
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--espaco-4);
+}
+
+main > section {
+    grid-column: span 12;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+section {
+    background-color: var(--cor-branca);
+    padding: var(--espaco-4);
+    border-left: 5px solid var(--cor-roxo);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   IMAGENS
+   ========================================================= */
+
+picture {
+    display: block;
+}
+
+picture img,
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: var(--espaco-3);
+}
+
+
+/* =========================================================
+   CARTÕES DOS PROJETOS
+   ========================================================= */
+
+.projetos-grid section {
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.projetos-grid section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-4);
+}
+
+fieldset {
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: var(--espaco-4);
+    background-color: var(--cor-branca);
+}
+
+legend {
+    color: var(--cor-roxo);
+    font-size: var(--texto-medio);
+    font-weight: bold;
+    padding: 0 var(--espaco-2);
+}
+
+label {
+    display: block;
+    margin-top: var(--espaco-3);
+    margin-bottom: var(--espaco-1);
+
+    font-weight: bold;
+    color: var(--cor-marinho);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.75rem;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+
+    font-family: var(--fonte-principal);
+    font-size: var(--texto-normal);
+
+    background-color: var(--cor-branca);
+    color: var(--cor-texto);
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid var(--cor-azul-claro);
+    border-color: var(--cor-azul);
+}
+/* Campo selecionado */
+input:focus,
+select:focus {
+    outline: 3px solid var(--cor-azul-claro);
+    border-color: var(--cor-azul);
+}
+
+/* Campo preenchido corretamente */
+input:user-valid,
+select:user-valid {
+    border-color: var(--cor-verde);
+    box-shadow: 0 0 0 3px var(--cor-verde-claro);
+}
+
+/* Campo preenchido incorretamente */
+input:user-invalid,
+select:user-invalid {
+    border-color: var(--cor-erro);
+    background-color: var(--cor-erro-claro);
+    box-shadow: 0 0 0 3px var(--cor-erro-claro);
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+button {
+    align-self: flex-start;
+
+    background-color: var(--cor-verde);
+    color: var(--cor-branca);
+
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    padding: 0.9rem 1.5rem;
+
+    font-family: var(--fonte-principal);
+    font-size: var(--texto-normal);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s,
+        transform 0.2s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+}
+
+/* Mouse sobre o botão */
+button:hover {
+    background-color: var(--cor-roxo);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(15, 23, 42, 0.18);
+}
+
+/* Navegação por teclado */
+button:focus {
+    outline: 3px solid var(--cor-azul-claro);
+    outline-offset: 3px;
+}
+
+/* Momento do clique */
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15);
+}
+
+/* Botão desativado */
+button:disabled {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto-secundario);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================================================
+   BREAKPOINT 2 - CELULARES MAIORES
+   480px até 767px
+   ========================================================= */
+
+@media (min-width: 480px) and (max-width: 767px) {
+    main {
+        width: 92%;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .inicio-grid section,
+    .projetos-grid section,
+    .cadastro-grid section {
+        grid-column: span 12;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 3 - TABLETS
+   768px até 1023px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    main {
+        width: 90%;
+    }
+
+    .inicio-grid section {
+        grid-column: span 6;
+    }
+
+    .projetos-grid section {
+        grid-column: span 6;
+    }
+
+    .cadastro-grid section {
+        grid-column: span 12;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 4 - COMPUTADORES
+   1024px até 1439px
+   ========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    main {
+        width: 85%;
+    }
+
+    .inicio-grid section {
+        grid-column: span 6;
+    }
+
+    .projetos-grid section {
+        grid-column: span 4;
+    }
+
+    .cadastro-grid section {
+        grid-column: 2 / span 10;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 5 - TELAS PANORÂMICAS
+   1440px ou mais
+   ========================================================= */
+
+@media (min-width: 1440px) {
+    main {
+        width: min(1320px, 82%);
+        gap: var(--espaco-5);
+    }
+
+    .inicio-grid section {
+        grid-column: span 6;
+    }
+
+    .projetos-grid section {
+        grid-column: span 4;
+    }
+
+    .cadastro-grid section {
+        grid-column: 3 / span 8;
+    }
+}
+/* =========================================================
+   MENU RESPONSIVO COM DROPDOWN E HAMBÚRGUER
+   ========================================================= */
+
+.menu-principal {
+    background-color: var(--cor-azul);
+    padding: var(--espaco-3);
+}
+
+.menu-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-3);
+}
+
+.menu-lista li {
+    position: relative;
+}
+
+.menu-lista a {
+    display: block;
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--espaco-2) var(--espaco-3);
+    border-radius: 6px;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+.menu-lista a:hover,
+.menu-lista a:focus {
+    background-color: var(--cor-roxo);
+}
+
+
+/* Dropdown */
+
+.submenu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    list-style: none;
+    margin: 0;
+    padding: var(--espaco-2);
+
+    background-color: var(--cor-marinho);
+    border-radius: 8px;
+
+    z-index: 10;
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+
+/* Controle do menu mobile */
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: none;
+
+    color: var(--cor-branca);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .menu-principal {
+        position: relative;
+    }
+
+    .menu-hamburguer {
+        display: block;
+        text-align: right;
+    }
+
+    .menu-lista {
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        margin-top: var(--espaco-3);
+    }
+
+    .menu-toggle:checked + .menu-hamburguer + .menu-lista {
+        display: flex;
+    }
+
+    .menu-lista a {
+        text-align: center;
+    }
+
+    .submenu {
+        position: static;
+        display: block;
+
+        background-color: var(--cor-marinho);
+        margin-top: var(--espaco-1);
+    }
+}
+/* TOAST */
+.toast {
+    max-width: 360px;
+    padding: var(--espaco-3) var(--espaco-4);
+    margin-top: var(--espaco-4);
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+}
+
+.toast-sucesso {
+    background-color: var(--cor-verde);
+    color: var(--cor-branca);
+    border-left: 5px solid var(--cor-marinho);
+}
+/* ALERTA */
+.alerta {
+    padding: var(--espaco-3);
+    border-radius: 8px;
+    margin-bottom: var(--espaco-4);
+    font-weight: 600;
+}
+
+.alerta-info {
+    background-color: var(--cor-azul-claro);
+    color: var(--cor-marinho);
+    border-left: 5px solid var(--cor-azul);
+}
+/* BADGES */
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: var(--texto-pequeno);
+    font-weight: bold;
+    margin-bottom: var(--espaco-2);
+}
+
+.badge-azul {
+    background-color: var(--cor-azul-claro);
+    color: var(--cor-azul);
+}
+
+.badge-verde {
+    background-color: var(--cor-verde-claro);
+    color: var(--cor-verde);
+}
+
+.badge-roxo {
+    background-color: var(--cor-roxo-claro);
+    color: var(--cor-roxo);
+}
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.botao-modal {
+    display: inline-block;
+    margin-top: var(--espaco-3);
+    padding: 0.75rem 1.25rem;
+
+    background-color: var(--cor-azul);
+    color: var(--cor-branca);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
+}
+
+.botao-modal:hover,
+.botao-modal:focus {
+    background-color: var(--cor-roxo);
+    transform: translateY(-2px);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--espaco-3);
+
+    background-color: rgba(15, 23, 42, 0.70);
+
+    z-index: 1000;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    background-color: var(--cor-branca);
+
+    padding: var(--espaco-5);
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.30);
+}
+
+.modal-fechar {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    color: var(--cor-marinho);
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-fechar:hover,
+.modal-fechar:focus {
+    color: var(--cor-roxo);
+}
+.toast-erro {
+    background-color: var(--cor-erro);
+    color: var(--cor-branca);
+    border-left: 5px solid var(--cor-marinho);
+}
+.campo-invalido {
+    border: 2px solid red;
+}
+
+.campo-valido {
+    border: 2px solid green;
+}
+
+.mensagem-erro-campo {
+    display: block;
+    color: red;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.toast-erro {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+.toast-sucesso {
+    background-color: #198754;
+    color: white;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 6px;
+}

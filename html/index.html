@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <title>ONG - Página Inicial</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>ONG Mãos Solidárias</h1>
+    </header>
+
+    <nav class="menu-principal">
+
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+        >
+
+        <label
+            for="menu-toggle"
+            class="menu-hamburguer"
+        >
+            ☰
+        </label>
+
+        <ul class="menu-lista">
+
+            <li>
+                <a
+                    href="#inicio"
+                    data-rota="inicio"
+                >
+                    Início
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a
+                    href="#projetos"
+                    data-rota="projetos"
+                >
+                    Projetos
+                </a>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a
+                            href="#projetos"
+                            data-rota="projetos"
+                        >
+                            Nossos projetos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#projetos"
+                            data-rota="projetos"
+                        >
+                            Doações
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#projetos"
+                            data-rota="projetos"
+                        >
+                            Voluntariado
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a
+                    href="#cadastro"
+                    data-rota="cadastro"
+                >
+                    Cadastro
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main
+        id="app"
+        class="inicio-grid"
+    >
+    </main>
+
+    <footer>
+
+        <p>
+            ONG Mãos Solidárias -
+            Todos os direitos reservados.
+        </p>
+
+        <p id="data-atualizacao"></p>
+
+    </footer>
+
+
+    <!-- Biblioteca externa Day.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js">
+    </script>
+
+    <!-- JavaScript principal -->
+    <script
+        type="module"
+        src="../js/app.js">
+    </script>
+
+</body>
+
+</html>

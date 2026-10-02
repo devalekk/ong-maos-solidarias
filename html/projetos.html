@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>ONG - Projetos</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>ONG Mãos Solidárias</h1>
+    </header>
+
+    <nav class="menu-principal">
+
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+        >
+
+        <label for="menu-toggle" class="menu-hamburguer">
+            ☰
+        </label>
+
+        <ul class="menu-lista">
+
+            <li>
+                <a href="index.html">Início</a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="projetos.html">Projetos</a>
+
+                <ul class="submenu">
+                    <li>
+                        <a href="projetos.html">Nossos projetos</a>
+                    </li>
+
+                    <li>
+                        <a href="projetos.html">Doações</a>
+                    </li>
+
+                    <li>
+                        <a href="projetos.html">Voluntariado</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li>
+                <a href="cadastro.html">Cadastro</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main class="projetos-grid">
+
+        <section>
+
+            <span class="badge badge-azul">Projeto ativo</span>
+
+            <h2>Nossos projetos</h2>
+
+            <picture>
+                <source
+                    srcset="../imagens/ong.png"
+                    type="image/png"
+                >
+
+                <img
+                    src="../imagens/ong.jpg"
+                    alt="Voluntários da ONG Mãos Solidárias realizando uma ação de apoio à comunidade"
+                >
+            </picture>
+
+            <p>
+                A ONG Mãos Solidárias realiza ações sociais para ajudar
+                pessoas e comunidades em situação de vulnerabilidade.
+            </p>
+                 <a href="#modal-ajuda" class="botao-modal">
+    Saiba como ajudar
+</a>
+        </section>
+
+        <section>
+
+            <span class="badge badge-verde">Doação</span>
+
+            <h2>Campanha de doação</h2>
+
+            <p>
+                Arrecadamos alimentos, roupas e outros itens para ajudar
+                famílias que precisam de apoio.
+            </p>
+
+        </section>
+
+        <section>
+
+            <span class="badge badge-roxo">Voluntariado</span>
+
+            <h2>Trabalho voluntário</h2>
+
+            <p>
+                Os voluntários podem participar das campanhas,
+                eventos e ações promovidas pela ONG.
+            </p>
+
+        </section>
+
+<div
+    id="modal-ajuda"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="titulo-modal"
+>
+    <div class="modal-conteudo">
+
+        <a href="#" class="modal-fechar" aria-label="Fechar modal">
+            ×
+        </a>
+
+        <h2 id="titulo-modal">Como ajudar a ONG</h2>
+
+        <p>
+            Você pode colaborar realizando doações ou participando
+            como voluntário nas ações da ONG Mãos Solidárias.
+        </p>
+
+        <a href="cadastro.html" class="botao-modal">
+            Quero participar
+        </a>
+
+    </div>
+</div>
+
+    </main>
+
+    <footer>
+        <p>ONG Mãos Solidárias - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
