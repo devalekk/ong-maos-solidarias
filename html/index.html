@@ -19,26 +19,36 @@
 
 <body>
 
+    <!-- Link de acessibilidade para pular diretamente ao conteúdo -->
+    <a href="#app" class="skip-link">
+        Ir para o conteúdo principal
+    </a>
+
     <header>
         <h1>ONG Mãos Solidárias</h1>
     </header>
 
-    <nav class="menu-principal">
+    <nav
+        class="menu-principal"
+        aria-label="Navegação principal"
+    >
 
-        <input
-            type="checkbox"
-            id="menu-toggle"
-            class="menu-toggle"
-        >
-
-        <label
-            for="menu-toggle"
+        <!-- Botão acessível do menu mobile -->
+        <button
+            type="button"
+            id="botao-menu"
             class="menu-hamburguer"
+            aria-controls="menu-lista"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação"
         >
-            ☰
-        </label>
+            <span aria-hidden="true">☰</span>
+        </button>
 
-        <ul class="menu-lista">
+        <ul
+            class="menu-lista"
+            id="menu-lista"
+        >
 
             <li>
                 <a
@@ -58,7 +68,10 @@
                     Projetos
                 </a>
 
-                <ul class="submenu">
+                <ul
+                    class="submenu"
+                    aria-label="Submenu de projetos"
+                >
 
                     <li>
                         <a
@@ -88,6 +101,7 @@
                     </li>
 
                 </ul>
+
             </li>
 
             <li>
@@ -106,6 +120,7 @@
     <main
         id="app"
         class="inicio-grid"
+        tabindex="-1"
     >
     </main>
 
@@ -120,8 +135,7 @@
 
     </footer>
 
-
-    <!-- Biblioteca externa Day.js -->
+    <!-- Biblioteca Day.js -->
     <script
         src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js">
     </script>
