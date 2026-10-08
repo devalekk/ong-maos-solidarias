@@ -2,17 +2,25 @@ import {
     templates
 } from "./templates.js";
 
+
 import {
     configurarValidacaoFormulario
 } from "./validacao.js";
+
 
 import {
     restaurarPreferenciaParticipacao
 } from "./storage.js";
 
+
 import {
     mostrarDataAtualizacao
 } from "./data.js";
+
+
+import {
+    configurarAltoContraste
+} from "./contraste.js";
 
 
 const app =
@@ -26,9 +34,9 @@ const rotas = [
 ];
 
 
-/* =========================================================
-   CARREGAMENTO DAS PÁGINAS DA SPA
-   ========================================================= */
+/* ========================================
+   CARREGAMENTO DA SPA
+   ======================================== */
 
 function carregarPagina(rota) {
 
@@ -59,6 +67,7 @@ function carregarPagina(rota) {
 
 
     if (rota === "cadastro") {
+
         restaurarPreferenciaParticipacao();
     }
 
@@ -67,7 +76,10 @@ function carregarPagina(rota) {
 }
 
 
-/* Informa ao leitor de tela qual página está ativa */
+/* ========================================
+   ROTA ATIVA E ACESSIBILIDADE
+   ======================================== */
+
 function atualizarRotaAtiva(rota) {
 
     const links =
@@ -97,12 +109,13 @@ function atualizarRotaAtiva(rota) {
 }
 
 
-/* =========================================================
-   MENU HAMBÚRGUER ACESSÍVEL
-   ========================================================= */
+/* ========================================
+   MENU HAMBÚRGUER
+   ======================================== */
 
 const botaoMenu =
     document.querySelector("#botao-menu");
+
 
 const menuLista =
     document.querySelector("#menu-lista");
@@ -122,7 +135,7 @@ if (botaoMenu && menuLista) {
 
             botaoMenu.setAttribute(
                 "aria-expanded",
-                aberto
+                String(aberto)
             );
 
 
@@ -145,7 +158,8 @@ if (botaoMenu && menuLista) {
 }
 
 
-/* Fecha o menu usando a tecla ESC */
+/* Fecha menu com ESC */
+
 document.addEventListener(
     "keydown",
     function (evento) {
@@ -162,15 +176,18 @@ document.addEventListener(
                 "aberto"
             );
 
+
             botaoMenu.setAttribute(
                 "aria-expanded",
                 "false"
             );
 
+
             botaoMenu.setAttribute(
                 "aria-label",
                 "Abrir menu de navegação"
             );
+
 
             botaoMenu.focus();
         }
@@ -178,9 +195,9 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   NAVEGAÇÃO DA SPA
-   ========================================================= */
+/* ========================================
+   NAVEGAÇÃO SPA
+   ======================================== */
 
 document.addEventListener(
     "click",
@@ -220,7 +237,6 @@ document.addEventListener(
         }
 
 
-        /* Fecha o menu mobile após navegar */
         if (menuLista) {
 
             menuLista.classList.remove(
@@ -236,6 +252,7 @@ document.addEventListener(
                 "false"
             );
 
+
             botaoMenu.setAttribute(
                 "aria-label",
                 "Abrir menu de navegação"
@@ -245,9 +262,9 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   HISTÓRICO DO NAVEGADOR
-   ========================================================= */
+/* ========================================
+   HISTÓRICO
+   ======================================== */
 
 window.addEventListener(
     "hashchange",
@@ -270,9 +287,9 @@ window.addEventListener(
 );
 
 
-/* =========================================================
+/* ========================================
    ROTA INICIAL
-   ========================================================= */
+   ======================================== */
 
 const rotaInicial =
     window.location.hash.replace(
@@ -291,9 +308,12 @@ if (rotas.includes(rotaInicial)) {
 }
 
 
-/* Validação do formulário */
+/* ========================================
+   FUNCIONALIDADES
+   ======================================== */
+
 configurarValidacaoFormulario();
 
-
-/* Data utilizando Day.js */
 mostrarDataAtualizacao();
+
+configurarAltoContraste();

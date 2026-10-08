@@ -54,3 +54,41 @@ export function restaurarPreferenciaParticipacao() {
             dados.participacao;
     }
 }
+
+
+/* ========================================
+   ALTO CONTRASTE
+   ======================================== */
+
+export function salvarPreferenciaContraste(ativo) {
+
+    localStorage.setItem(
+        "altoContraste",
+        JSON.stringify(ativo)
+    );
+}
+
+
+export function carregarPreferenciaContraste() {
+
+    const preferencia =
+        localStorage.getItem("altoContraste");
+
+    if (preferencia === null) {
+        return false;
+    }
+
+    try {
+
+        return JSON.parse(preferencia);
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao recuperar preferência de contraste:",
+            erro
+        );
+
+        return false;
+    }
+}
