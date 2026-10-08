@@ -860,3 +860,188 @@ select:focus-visible {
         animation: none !important;
     }
 }
+/* =========================================================
+   MODO DE ALTO CONTRASTE
+   Preto + Roxo escuro + Azul marinho + Branco
+   ========================================================= */
+
+body.alto-contraste {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/* Estruturas principais */
+body.alto-contraste header {
+    background-color: #14001f;
+    color: #ffffff;
+}
+
+body.alto-contraste nav {
+    background-color: #081a33;
+    color: #ffffff;
+}
+
+body.alto-contraste footer {
+    background-color: #081a33;
+    color: #ffffff;
+}
+
+body.alto-contraste section,
+body.alto-contraste fieldset,
+body.alto-contraste .modal-conteudo {
+    background-color: #0b0b0f;
+    color: #ffffff;
+
+    border-color: #ffffff;
+}
+
+
+/* Títulos e textos */
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste label,
+body.alto-contraste legend {
+    color: #ffffff;
+}
+
+
+/* Links */
+body.alto-contraste a {
+    color: #ffffff;
+}
+
+
+/* Navegação */
+body.alto-contraste .menu-principal {
+    background-color: #081a33;
+
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+body.alto-contraste .menu-lista a {
+    background-color: #081a33;
+    color: #ffffff;
+}
+
+body.alto-contraste .menu-lista a:hover,
+body.alto-contraste .menu-lista a:focus {
+    background-color: #2b0a3d;
+    color: #ffffff;
+}
+
+body.alto-contraste .submenu {
+    background-color: #14001f;
+    border: 2px solid #ffffff;
+}
+
+
+/* Formulários */
+body.alto-contraste input,
+body.alto-contraste select {
+    background-color: #ffffff;
+    color: #000000;
+
+    border: 2px solid #081a33;
+}
+
+
+/* Botões */
+body.alto-contraste button {
+    background-color: #2b0a3d;
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+}
+
+
+/* Botão de contraste */
+body.alto-contraste .botao-contraste {
+    background-color: #ffffff;
+    color: #14001f;
+
+    border: 3px solid #081a33;
+}
+
+
+/* Badges */
+body.alto-contraste .badge {
+    background-color: #2b0a3d;
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+}
+
+
+/* Alertas */
+body.alto-contraste .alerta {
+    background-color: #081a33;
+    color: #ffffff;
+
+    border: 3px solid #ffffff;
+}
+
+
+/* Toasts */
+body.alto-contraste .toast {
+    background-color: #14001f;
+    color: #ffffff;
+
+    border: 3px solid #ffffff;
+}
+
+
+/* Campos válidos */
+body.alto-contraste .campo-valido {
+    border: 4px solid #ffffff;
+}
+
+
+/* Campos inválidos */
+body.alto-contraste .campo-invalido {
+    border: 4px solid #b8a7ff;
+}
+
+
+/* Mensagem de erro */
+body.alto-contraste .mensagem-erro-campo {
+    color: #ffffff;
+}
+
+
+/* Foco visível */
+body.alto-contraste a:focus-visible,
+body.alto-contraste button:focus-visible,
+body.alto-contraste input:focus-visible,
+body.alto-contraste select:focus-visible {
+    outline: 4px solid #ffffff;
+    outline-offset: 4px;
+}
+
+
+/* Skip link */
+body.alto-contraste .skip-link {
+    background-color: #ffffff;
+    color: #14001f;
+
+    border: 3px solid #081a33;
+}
+
+
+/* Modal */
+body.alto-contraste .modal {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+body.alto-contraste .modal-fechar {
+    color: #ffffff;
+}
+
+
+/* Imagens */
+body.alto-contraste img {
+    border: 3px solid #ffffff;
+}

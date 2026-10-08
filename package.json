@@ -1,0 +1,16 @@
+{
+  "name": "ong-maos-solidarias",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Projeto de Desenvolvimento Front-end da ONG Mãos Solidárias",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "vite": "^8.3.3",
+    "vite-plugin-static-copy": "^4.1.1"
+  }
+}
