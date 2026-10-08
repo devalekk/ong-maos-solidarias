@@ -1,15 +1,18 @@
 /*
-   As imagens são importadas desta forma para
-   que o Vite consiga incluí-las corretamente
-   na build de produção.
+    Imagem WebP otimizada para navegadores modernos.
 */
 
-const imagemOngPng =
+const imagemOngWebp =
     new URL(
-        "../imagens/ong.png",
+        "../imagens/ong.webp",
         import.meta.url
     ).href;
 
+
+/*
+    JPG utilizado como alternativa caso
+    o navegador não carregue WebP.
+*/
 
 const imagemOngJpg =
     new URL(
@@ -52,7 +55,7 @@ const projetos = [
 
 
 /* =========================================================
-   TEMPLATE DOS CARDS
+   CRIAÇÃO DOS CARDS
    ========================================================= */
 
 function criarCardProjeto(projeto) {
@@ -80,15 +83,15 @@ function criarCardProjeto(projeto) {
 
 
 /* =========================================================
-   TEMPLATES DA SPA
+   TEMPLATES DA APLICAÇÃO
    ========================================================= */
 
 export const templates = {
 
 
-    /* =========================
-       INÍCIO
-       ========================= */
+    /* =====================================================
+       PÁGINA INICIAL
+       ===================================================== */
 
     inicio: `
 
@@ -98,11 +101,12 @@ export const templates = {
                 Sobre a ONG
             </h2>
 
+
             <picture>
 
                 <source
-                    srcset="${imagemOngPng}"
-                    type="image/png"
+                    srcset="${imagemOngWebp}"
+                    type="image/webp"
                 >
 
                 <img
@@ -111,6 +115,7 @@ export const templates = {
                 >
 
             </picture>
+
 
             <p>
                 A ONG Mãos Solidárias desenvolve
@@ -127,13 +132,16 @@ export const templates = {
                 Contato
             </h2>
 
+
             <p>
                 Telefone: (99) 99999-9999
             </p>
 
+
             <p>
                 E-mail: contato@exemplo.org
             </p>
+
 
             <p>
                 Endereço:
@@ -144,9 +152,9 @@ export const templates = {
     `,
 
 
-    /* =========================
-       PROJETOS
-       ========================= */
+    /* =====================================================
+       PÁGINA DE PROJETOS
+       ===================================================== */
 
     projetos: `
 
@@ -161,10 +169,12 @@ export const templates = {
                 Ajude nossa ONG
             </h2>
 
+
             <p>
                 Conheça as formas de contribuir
                 com nossas ações.
             </p>
+
 
             <a
                 href="#modal-ajuda"
@@ -185,6 +195,7 @@ export const templates = {
         >
 
             <div class="modal-conteudo">
+
 
                 <a
                     href="#projetos"
@@ -222,9 +233,9 @@ export const templates = {
     `,
 
 
-    /* =========================
-       CADASTRO
-       ========================= */
+    /* =====================================================
+       PÁGINA DE CADASTRO
+       ===================================================== */
 
     cadastro: `
 
@@ -412,9 +423,11 @@ export const templates = {
                             Selecione
                         </option>
 
+
                         <option value="voluntario">
                             Voluntário
                         </option>
+
 
                         <option value="doador">
                             Doador
