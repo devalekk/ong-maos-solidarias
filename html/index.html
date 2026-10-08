@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -14,42 +15,85 @@
         href="../css/style.css"
     >
 
-    <title>ONG - Página Inicial</title>
+    <title>
+        ONG Mãos Solidárias
+    </title>
+
 </head>
+
 
 <body>
 
+
+    <a
+        href="#app"
+        class="skip-link"
+    >
+        Ir para o conteúdo principal
+    </a>
+
+
     <header>
-        <h1>ONG Mãos Solidárias</h1>
+
+        <h1>
+            ONG Mãos Solidárias
+        </h1>
+
+
+        <button
+            type="button"
+            id="botao-contraste"
+            class="botao-contraste"
+            aria-pressed="false"
+        >
+            Ativar alto contraste
+        </button>
+
     </header>
 
-    <nav class="menu-principal">
 
-        <input
-            type="checkbox"
-            id="menu-toggle"
-            class="menu-toggle"
-        >
+    <nav
+        class="menu-principal"
+        aria-label="Navegação principal"
+    >
 
-        <label
-            for="menu-toggle"
+
+        <button
+            type="button"
+            id="botao-menu"
             class="menu-hamburguer"
+            aria-controls="menu-lista"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação"
         >
-            ☰
-        </label>
 
-        <ul class="menu-lista">
+            <span aria-hidden="true">
+                ☰
+            </span>
+
+        </button>
+
+
+        <ul
+            class="menu-lista"
+            id="menu-lista"
+        >
+
 
             <li>
+
                 <a
                     href="#inicio"
                     data-rota="inicio"
                 >
                     Início
                 </a>
+
             </li>
 
+
             <li class="dropdown">
+
 
                 <a
                     href="#projetos"
@@ -58,56 +102,78 @@
                     Projetos
                 </a>
 
-                <ul class="submenu">
+
+                <ul
+                    class="submenu"
+                    aria-label="Submenu de projetos"
+                >
+
 
                     <li>
+
                         <a
                             href="#projetos"
                             data-rota="projetos"
                         >
                             Nossos projetos
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="#projetos"
                             data-rota="projetos"
                         >
                             Doações
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a
                             href="#projetos"
                             data-rota="projetos"
                         >
                             Voluntariado
                         </a>
+
                     </li>
 
+
                 </ul>
+
             </li>
 
+
             <li>
+
                 <a
                     href="#cadastro"
                     data-rota="cadastro"
                 >
                     Cadastro
                 </a>
+
             </li>
+
 
         </ul>
 
     </nav>
 
+
     <main
         id="app"
         class="inicio-grid"
+        tabindex="-1"
     >
     </main>
+
 
     <footer>
 
@@ -122,15 +188,21 @@
 
 
     <!-- Biblioteca externa Day.js -->
+
     <script
-        src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js">
+        src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"
+    >
     </script>
 
+
     <!-- JavaScript principal -->
+
     <script
         type="module"
-        src="../js/app.js">
+        src="../js/app.js"
+    >
     </script>
+
 
 </body>
 

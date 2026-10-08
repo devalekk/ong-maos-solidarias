@@ -1,4 +1,29 @@
+/*
+   As imagens são importadas desta forma para
+   que o Vite consiga incluí-las corretamente
+   na build de produção.
+*/
+
+const imagemOngPng =
+    new URL(
+        "../imagens/ong.png",
+        import.meta.url
+    ).href;
+
+
+const imagemOngJpg =
+    new URL(
+        "../imagens/ong.jpg",
+        import.meta.url
+    ).href;
+
+
+/* =========================================================
+   DADOS DOS PROJETOS
+   ========================================================= */
+
 const projetos = [
+
     {
         badge: "Projeto ativo",
         classeBadge: "badge-azul",
@@ -22,15 +47,22 @@ const projetos = [
         descricao:
             "Os voluntários podem participar das campanhas, eventos e ações promovidas pela ONG."
     }
+
 ];
 
+
+/* =========================================================
+   TEMPLATE DOS CARDS
+   ========================================================= */
 
 function criarCardProjeto(projeto) {
 
     return `
         <section class="card-projeto">
 
-            <span class="badge ${projeto.classeBadge}">
+            <span
+                class="badge ${projeto.classeBadge}"
+            >
                 ${projeto.badge}
             </span>
 
@@ -47,31 +79,43 @@ function criarCardProjeto(projeto) {
 }
 
 
+/* =========================================================
+   TEMPLATES DA SPA
+   ========================================================= */
+
 export const templates = {
 
+
+    /* =========================
+       INÍCIO
+       ========================= */
+
     inicio: `
+
         <section>
 
-            <h2>Sobre a ONG</h2>
+            <h2>
+                Sobre a ONG
+            </h2>
 
             <picture>
 
                 <source
-                    srcset="../imagens/ong.png"
+                    srcset="${imagemOngPng}"
                     type="image/png"
                 >
 
                 <img
-                    src="../imagens/ong.jpg"
+                    src="${imagemOngJpg}"
                     alt="Voluntários da ONG Mãos Solidárias participando de uma ação social"
                 >
 
             </picture>
 
             <p>
-                A ONG Mãos Solidárias desenvolve ações sociais
-                para ajudar pessoas e comunidades que precisam
-                de apoio.
+                A ONG Mãos Solidárias desenvolve
+                ações sociais para ajudar pessoas
+                e comunidades que precisam de apoio.
             </p>
 
         </section>
@@ -79,7 +123,9 @@ export const templates = {
 
         <section>
 
-            <h2>Contato</h2>
+            <h2>
+                Contato
+            </h2>
 
             <p>
                 Telefone: (99) 99999-9999
@@ -90,23 +136,34 @@ export const templates = {
             </p>
 
             <p>
-                Endereço: Rua Exemplo, 100 - Centro
+                Endereço:
+                Rua Exemplo, 100 - Centro
             </p>
 
         </section>
     `,
 
 
+    /* =========================
+       PROJETOS
+       ========================= */
+
     projetos: `
 
-        ${projetos.map(criarCardProjeto).join("")}
+        ${projetos
+            .map(criarCardProjeto)
+            .join("")}
+
 
         <section>
 
-            <h2>Ajude nossa ONG</h2>
+            <h2>
+                Ajude nossa ONG
+            </h2>
 
             <p>
-                Conheça as formas de contribuir com nossas ações.
+                Conheça as formas de contribuir
+                com nossas ações.
             </p>
 
             <a
@@ -137,15 +194,19 @@ export const templates = {
                     ×
                 </a>
 
+
                 <h2 id="titulo-modal">
                     Como ajudar a ONG
                 </h2>
 
+
                 <p>
-                    Você pode colaborar realizando doações
-                    ou participando como voluntário nas ações
-                    da ONG Mãos Solidárias.
+                    Você pode colaborar realizando
+                    doações ou participando como
+                    voluntário nas ações da
+                    ONG Mãos Solidárias.
                 </p>
+
 
                 <a
                     href="#cadastro"
@@ -161,24 +222,33 @@ export const templates = {
     `,
 
 
+    /* =========================
+       CADASTRO
+       ========================= */
+
     cadastro: `
+
         <section>
 
             <h2>
                 Cadastro de colaborador
             </h2>
 
+
             <p>
-                Preencha o formulário abaixo para participar
-                das ações da ONG Mãos Solidárias.
+                Preencha o formulário abaixo
+                para participar das ações da
+                ONG Mãos Solidárias.
             </p>
+
 
             <div
                 class="alerta alerta-info"
                 role="alert"
             >
-                Preencha todos os campos obrigatórios
-                antes de enviar o cadastro.
+                Preencha todos os campos
+                obrigatórios antes de enviar
+                o cadastro.
             </div>
 
 
@@ -186,6 +256,7 @@ export const templates = {
                 id="form-cadastro"
                 novalidate
             >
+
 
                 <fieldset>
 
@@ -325,9 +396,11 @@ export const templates = {
                         Participação
                     </legend>
 
+
                     <label for="participacao">
                         Como deseja participar?
                     </label>
+
 
                     <select
                         id="participacao"
@@ -355,6 +428,7 @@ export const templates = {
                 <button type="submit">
                     Enviar cadastro
                 </button>
+
 
             </form>
 
